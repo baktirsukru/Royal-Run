@@ -69,7 +69,6 @@ public class DenemeScript : MonoBehaviour
                 chunks.Remove(chunk);
                 Destroy(chunk);
                 SpawnChunk();
-                
             }
         }
 

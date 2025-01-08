@@ -22,7 +22,7 @@ public class ObstacleSpawner : MonoBehaviour
         {
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnWidth,spawnWidth), transform.position.y, transform.position.z);
             GameObject obstaclePrefab = obstaclePrefabs[Random.Range(0,obstaclePrefabs.Length)];
-            yield return new WaitForSeconds(obstacleSpawnTime); 
+            yield return new WaitForSeconds(obstacleSpawnTime); // tam anlamadım
             Instantiate(obstaclePrefab, spawnPosition, Random.rotation, obstacleParent);
         }
     }
