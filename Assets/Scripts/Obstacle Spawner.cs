@@ -24,13 +24,6 @@ public class ObstacleSpawner : MonoBehaviour
             GameObject obstaclePrefab = obstaclePrefabs[Random.Range(0,obstaclePrefabs.Length)];
             yield return new WaitForSeconds(obstacleSpawnTime); 
             Instantiate(obstaclePrefab, spawnPosition, Random.rotation, obstacleParent);
-
-            /*  
-            if(obstaclePrefab.transform.position.z <= Camera.main.transform.position.z)
-            {
-                Destroy(obstaclePrefabs[]);
-            } 
-             */
         }
     }
     
