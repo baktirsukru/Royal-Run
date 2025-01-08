@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ObstacleSpawner : MonoBehaviour
 {
@@ -7,7 +9,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] float obstacleSpawnTime = 5f;
     [SerializeField] Transform obstacleParent;
     [SerializeField] float spawnWidth = 4f;
-    
+
     
     void Start()
     {
@@ -22,6 +24,15 @@ public class ObstacleSpawner : MonoBehaviour
             GameObject obstaclePrefab = obstaclePrefabs[Random.Range(0,obstaclePrefabs.Length)];
             yield return new WaitForSeconds(obstacleSpawnTime); 
             Instantiate(obstaclePrefab, spawnPosition, Random.rotation, obstacleParent);
+
+            /*  
+            if(obstaclePrefab.transform.position.z <= Camera.main.transform.position.z)
+            {
+                Destroy(obstaclePrefabs[]);
+            } 
+             */
         }
     }
+    
+    
 }
