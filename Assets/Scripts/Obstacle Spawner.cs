@@ -26,6 +26,4 @@ public class ObstacleSpawner : MonoBehaviour
             Instantiate(obstaclePrefab, spawnPosition, Random.rotation, obstacleParent);
         }
     }
-    
-    
 }
