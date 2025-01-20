@@ -153,6 +153,7 @@ MonoBehaviour:
   chunkParent: {fileID: 1407881344}
   chunkLenght: 10
   moveSpeed: 8
+  minMoveSpeed: 2
 --- !u!4 &3646302
 Transform:
   m_ObjectHideFlags: 0
@@ -579,7 +580,7 @@ GameObject:
   - component: {fileID: 1060756664}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -593,9 +594,9 @@ Transform:
   m_GameObject: {fileID: 1060756659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0.241, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1656019940}
   m_Father: {fileID: 0}
@@ -723,6 +724,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65cd6da9d8b47f4e85347431e913ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1677650535}
+  collisionCooldown: 1
+  adjustChangeMoveSpeedAmount: -2
 --- !u!4 &1105489772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6410221756858730007, guid: dcbc89efbe5bd174b99e07c76bd0b6bf, type: 3}
@@ -824,6 +828,11 @@ Transform:
   - {fileID: 1105489772}
   m_Father: {fileID: 1060756660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1677650535 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1014860696115371117, guid: dcbc89efbe5bd174b99e07c76bd0b6bf, type: 3}
+  m_PrefabInstance: {fileID: 780907833}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1773985259
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +936,7 @@ MonoBehaviour:
   - {fileID: 7613339432759580006, guid: 2d69ea5ee1d0679448ddc5f5b1798021, type: 3}
   obstacleSpawnTime: 2
   obstacleParent: {fileID: 196898814}
-  spawnWidth: 5
+  spawnWidth: 4.5
 --- !u!4 &1782985746
 Transform:
   m_ObjectHideFlags: 0
