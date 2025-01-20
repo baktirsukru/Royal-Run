@@ -62,7 +62,7 @@ public class Chunk : MonoBehaviour
         {
             float spawnPositionZ = topOfChunkZPos - (i * coinSeperationLength);
             Vector3 spawnPosition = new Vector3(lanes[selectedLane], transform.position.y, spawnPositionZ);
-            Instantiate(coinPrefab, spawnPosition, Quaternion.identity, this.transform);            
+            Instantiate(coinPrefab, spawnPosition, Quaternion.identity, this.transform);      
         }
     }
     
