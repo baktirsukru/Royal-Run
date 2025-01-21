@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float xClamp = 5f;
     [SerializeField] float zClamp = 5f;

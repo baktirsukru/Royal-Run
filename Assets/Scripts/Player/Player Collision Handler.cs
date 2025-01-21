@@ -4,6 +4,8 @@ using UnityEngine.PlayerLoop;
 public class PlayerCollisionHandler : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    
+    [Header("Settings")]
     [SerializeField] float collisionCooldown = 1f; 
     [SerializeField] float adjustChangeMoveSpeedAmount = -2f;
 

@@ -150,11 +150,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraController: {fileID: 325237803}
   chunkPrefab: {fileID: 6833830538735997023, guid: 5090d12393afced40ba5827a76c83dc2, type: 3}
-  startingChunkAmount: 12
   chunkParent: {fileID: 1407881344}
+  startingChunkAmount: 12
   chunkLenght: 10
   moveSpeed: 8
   minMoveSpeed: 2
+  maxMoveSpeed: 20
+  minGravityZ: -22
+  maxGravityZ: -2
 --- !u!4 &3646302
 Transform:
   m_ObjectHideFlags: 0
@@ -259,7 +262,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 60.000004
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -290,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f28e9860727bb4d9aecc68f3f33b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedupParticleSystem: {fileID: 1494407552}
   minFOV: 20
   maxFOV: 120
   zoomDuration: 1
@@ -355,7 +359,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -975,7 +979,7 @@ ParticleSystemRenderer:
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 2
+  m_LengthScale: 10
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
@@ -1008,16 +1012,16 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494407549}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 0.6
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -1136,7 +1140,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1254,7 +1258,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1635,7 +1639,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0.2
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -1718,7 +1722,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 4.02
+      value: 2.7
       mode: 0
       spread: 0
       speed:
@@ -1837,7 +1841,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 25
       minScalar: 10
       maxCurve:
         serializedVersion: 2

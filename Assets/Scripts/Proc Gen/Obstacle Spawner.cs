@@ -5,9 +5,12 @@ using UnityEngine.Rendering;
 
 public class ObstacleSpawner : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] GameObject[] obstaclePrefabs;
-    [SerializeField] float obstacleSpawnTime = 5f;
     [SerializeField] Transform obstacleParent;
+
+    [Header("Settings")]
+    [SerializeField] float obstacleSpawnTime = 5f;
     [SerializeField] float spawnWidth = 4f;
 
     
