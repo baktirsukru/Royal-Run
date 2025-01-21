@@ -7,7 +7,7 @@ public class Apple : Pickup
 
     void Start()
     {
-        levelGenerator = FindAnyObjectByType<LevelGenerator>();
+        levelGenerator = FindAnyObjectByType<LevelGenerator>(); //Dependency Injection
     }    
 
     protected override void OnPickup()
