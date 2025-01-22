@@ -6,11 +6,15 @@ public class LevelGenerator : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] CameraController cameraController;
-    [SerializeField] GameObject chunkPrefab;
+    [SerializeField] GameObject[] chunkPrefabs;
+    [SerializeField] GameObject checkpointChunkPrefab;
     [SerializeField] Transform chunkParent;
+    [SerializeField] ScoreManager scoreManager;
 
     [Header("Level Settings")]
     [SerializeField] int startingChunkAmount = 12;
+    [SerializeField] int checkpointChunkInterval = 8;
+
     [Tooltip("Do not change chunk length value")]
     [SerializeField] float chunkLenght = 10f;
     [SerializeField] float moveSpeed = 8f;
@@ -19,9 +23,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] float minGravityZ = -22f;
     [SerializeField] float maxGravityZ = -2f;
 
-
-
     List<GameObject> chunks = new List<GameObject>();  //list
+
+    int chunkSpawned = 0;
 
     void Start()
     {
@@ -63,12 +67,30 @@ public class LevelGenerator : MonoBehaviour
     private void SpawnChunk()
     {
         float spawnPositionZ = CalculateSpawnPositionZ();
-
         Vector3 chunkSpawnPos = new Vector3(transform.position.x, transform.position.y, spawnPositionZ);
+        GameObject chunkToSpawn = ChooseChunkToSpawn();
+        GameObject newChunkGO = Instantiate(chunkToSpawn, chunkSpawnPos, Quaternion.identity, chunkParent);
+        chunks.Add(newChunkGO);
+        Chunk newChunk = newChunkGO.GetComponent<Chunk>();
+        newChunk.Init(this, scoreManager);
 
-        GameObject newChunk = Instantiate(chunkPrefab, chunkSpawnPos, Quaternion.identity, chunkParent);
+        chunkSpawned++;
+    }
 
-        chunks.Add(newChunk);
+    private GameObject ChooseChunkToSpawn()
+    {
+        GameObject chunkToSpawn;
+        
+        if (chunkSpawned % checkpointChunkInterval == 0 && chunkSpawned != 0)
+        {
+            chunkToSpawn = checkpointChunkPrefab;
+        }
+        else
+        {
+            chunkToSpawn = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
+        }
+
+        return chunkToSpawn;
     }
 
     float CalculateSpawnPositionZ()
