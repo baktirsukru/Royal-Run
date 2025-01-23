@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 325237802}
   - component: {fileID: 325237805}
   - component: {fileID: 325237804}
+  - component: {fileID: 325237806}
   - component: {fileID: 325237803}
   m_Layer: 0
   m_Name: CinemachineCamera
@@ -746,6 +747,29 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
+--- !u!114 &325237806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325237800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1061,39 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &399291550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399291551}
+  m_Layer: 0
+  m_Name: Fog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399291551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399291550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.130019, y: -21.81362, z: -3.446795}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1373166253}
+  - {fileID: 811122709}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,11 +6162,11 @@ Transform:
   m_GameObject: {fileID: 811122706}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -22.4, z: -2.5}
+  m_LocalPosition: {x: -14.130019, y: -0.58638, z: 0.946795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 399291551}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
@@ -11155,12 +11212,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373166250}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 35}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.130019, y: 21.81362, z: 38.446796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 399291551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1407881343
 GameObject:
@@ -16304,13 +16361,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefabs:
-  - {fileID: 2386405441013911710, guid: 29b59a9e68c0dd4478820ed82c179a90, type: 3}
   - {fileID: 6849417939628349184, guid: fedec5c4f70e0d048baf39574785e425, type: 3}
   - {fileID: 8743562831264570296, guid: 0b600165b346ed54981403f783264013, type: 3}
   - {fileID: 4625488409136746898, guid: 300d14059462aa146bf29b7a3a74624b, type: 3}
   - {fileID: 7613339432759580006, guid: 2d69ea5ee1d0679448ddc5f5b1798021, type: 3}
+  - {fileID: 3453782262667044114, guid: 45aae24b43d84a24badda19e4d80b7e6, type: 3}
+  - {fileID: 2386405441013911710, guid: 29b59a9e68c0dd4478820ed82c179a90, type: 3}
   obstacleParent: {fileID: 196898814}
-  obstacleSpawnTime: 2
+  obstacleSpawnTime: 3
   spawnWidth: 4.5
 --- !u!4 &1782985746
 Transform:
@@ -16478,5 +16536,4 @@ SceneRoots:
   - {fileID: 44989122}
   - {fileID: 1763540305}
   - {fileID: 505900387}
-  - {fileID: 1373166253}
-  - {fileID: 811122709}
+  - {fileID: 399291551}
